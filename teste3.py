@@ -1,3 +1,5 @@
+
+from os import name
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.providers.hooks.postgres import PostgresHook
@@ -17,7 +19,7 @@ def CapturaDados():
         dados = df[i]
         sql = f"""""
         INSERT INTO public.dados[id, nome]
-        VALUES ("{id['id']}, {nome['nome']}");
+        VALUES ("{id['id']}, {name['nome']}");
         """
         cursor.execute(sql)
         conn.commit()
@@ -27,4 +29,3 @@ default_args = {
     "owner": "Layra",
     "start_date": datetime.datetime[2022,11,7]
 }
-

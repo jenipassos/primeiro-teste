@@ -1,3 +1,4 @@
+
 import requests
 import pandas as pd
 import json
@@ -11,7 +12,3 @@ id = df['id']
 nome = df['nome']
 
 print(id,nome)
-
-
-
-
